@@ -1,0 +1,67 @@
+import React, { useState } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handleClick = () => {
+    setShowMessage(true);
+  };
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Welcome to PopVid!</h1>
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+
+      {/* Main content area */}
+      <main className="App-main">
+        <h2>Explore Trending Videos</h2>
+        <p>Discover the latest videos from all over the world.</p>
+
+        <button
+          onClick={handleClick}
+          className="App-button"
+        >
+          Show Message
+        </button>
+
+        {showMessage && (
+          <p className="message">
+            Welcome to PopVid, your go-to place for trending videos!
+          </p>
+        )}
+      </main>
+
+      {/* Footer section */}
+      <footer className="App-footer">
+        <p>Created by Your Name &copy; 2024</p>
+        <p>
+          <a
+            className="App-link"
+            href="https://github.com/yourusername/popvid"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit our GitHub
+          </a>
+        </p>
+      </footer>
+    </div>
+  );
+}
+
+export default App
